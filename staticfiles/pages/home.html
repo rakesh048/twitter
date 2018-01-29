@@ -1,0 +1,119 @@
+   <style>
+    .button {
+      position: relative;
+      background-color: #3D5BA4;
+      border: none;
+      font-size: 19px;
+      color: #FFFFFF;
+      padding: 5px;
+      width: 100%;
+      text-align: center;
+      -webkit-transition-duration: 0.4s; 
+      transition-duration: 0.4s;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+      height: 40px;
+    }
+
+    .button:after {
+      content: "";
+      background:#597fed;
+      display: block;
+      position: absolute;
+      padding-top: 300%;
+      padding-left: 350%;
+      margin-left: -20px!important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+
+    .button:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
+    }
+    .bg-content {
+      text-align: center;
+      padding-top: 5px;
+      padding-left: 110px;
+      padding-right: 110px;
+      margin-top: 75px;
+      margin-bottom: 90px;
+      background-color: #FFF;
+      min-height: 200px;
+    }
+  </style>
+
+  <div class="col-md-12">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-content">
+      <h3>Hi, you need to login now!</h3><br><br>
+      <div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4"><button class="button" ng-click="login()">Login</button></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4"><button class="button" ng-click="register()">Register</button></div>
+        <div class="col-md-1"></div>
+      </div><br><br><br><br>
+      <div ng-show="login_page=='True'">
+        <div class="col-md-3"><label for="username">Username:</label></div>
+        <div class="col-md-8"><div class="form-group">
+          <input type="text" class="form-control" ng-model="username" placeholder="Enter Username">
+        </div>
+      </div>
+      <div class="col-md-3"><label for="pwd">Password:</label></div><br>
+      <div class="col-md-8"><div class="form-group">
+        <input type="password" class="form-control" ng-model="password" placeholder="Enter password" name="pwd">
+      </div></div><br>
+      <div class="col-md-12">
+        <button class="button" ng-click="loginsubmit()">Submit</button>
+      </div>
+    </div>
+
+    <div ng-show="reg_page=='True'">
+      <div class="col-md-3"><label for="username">Username:</label></div>
+      <div class="col-md-8"><div class="form-group">
+        <input type="text" class="form-control" ng-model="username" placeholder="Enter Username">
+      </div>
+    </div>
+    <div class="col-md-3"><label for="">Password:</label></div>
+      <div class="col-md-8"><div class="form-group">
+        <input type="password" class="form-control" ng-model="password" placeholder="Enter Password">
+      </div>
+    </div>
+    <div class="col-md-3"><label for="">Email:</label></div>
+    <div class="col-md-8"><div class="form-group">
+      <input type="email" class="form-control" ng-model="email" placeholder="Enter Email">
+    </div>
+  </div>
+  <div class="col-md-3"><label for="">Age:</label></div>
+  <div class="col-md-8"><div class="form-group">
+    <input type="text" class="form-control" ng-model="age" placeholder="Enter Age">
+  </div>
+</div>
+<div class="col-md-3"><label for="">Gender:</label></div>
+<div class="col-md-8"><div class="form-group">
+<select ng-model="gender">
+<option value="">---Please select---</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select></div>
+</div>
+<div class="col-md-3"><label for="">Mobile:</label></div>
+<div class="col-md-8"><div class="form-group">
+  <input type="text" class="form-control" ng-model="mobile" placeholder="Enter Mobile">
+</div>
+</div>
+<br>
+<div class="col-md-12">
+  <button class="button" ng-click="registersubmit()">Submit</button>
+</div>
+</div>
+
+</div>
+
+<div class="col-md-3"></div>
+</div>

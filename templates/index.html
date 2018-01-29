@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html ng-app="App" >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test App</title>
+  <link href="{% static 'static/css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="/static/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="/static/static/css/bootstrap/bootstrap-glyphicons.css" rel="stylesheet">   
+  <link href="/static/static/css/bootstrap/bootstrap-timepicker.css" rel="stylesheet">
+  <style>
+    #login-bg-top {
+      background-image: url('static/static/img/cover.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 130px;
+      display: block;
+      text-align: center;
+      width:100%;
+      box-shadow: 1px 1px 3px #888888;
+    }
+    .logo-circle {
+      background-image: url('static/static/img/twitter.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 125px;
+      width: 150px;
+      height: 150px;
+      margin-top: 50px;
+      display: inline-block;
+      border: 5px solid rgba(211,211,211,0.9);
+      box-shadow: 2px 2px 3px #888888;
+    }
+  </style>
+
+</head>
+
+<body style="background-color: #ccc;color:#3455b3;background-image:url('static/static/img/background.jpg')">
+  <div id="login-bg-top">
+    <div class="logo-circle"></div>
+  </div>
+  <div ng-view=""></div>
+  <script src="{% static 'static/js/angular/angular.min.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular-animate.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular-route.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular-sanitize.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular_aria.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular_material.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular_message.js' %}"></script>
+  <script src="{% static 'static/js/angular/angular-cookies.js' %}"></script>
+  <script src="{% static 'static/app/app.js' %}"></script>
+  <script src="{% static 'static/app/HTTPService.js' %}"></script>
+  <script src="{% static 'static/app/HomeController.js' %}"></script>
+  <script src="{% static 'static/app/AdminController.js' %}"></script>
+  <script src="{% static 'static/app/UserController.js' %}"></script>
+  <script src="{% static 'static/app/deashboardController.js' %}"></script>
+  <script src="{% static 'static/app/url.js' %}"></script>
+</body>
+</html>

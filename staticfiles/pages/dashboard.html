@@ -1,0 +1,66 @@
+<style>
+	.bg-content {
+		background-color: #FFF;
+	}
+</style>
+<div class="col-md-12">
+	<button class="btn btn-primary btn-sm button" style="margin-top: -230px;background-color: #3D5BA4;">Hi, {{user_name}}
+	</button>
+	<button type="button" class="btn btn-primary btn-sm button" ng-click="logout()" style="margin-top: -230px;background-color: #3D5BA4;" ng-click="logout()">Logout
+	</button>
+	<br><br><br><br>
+</div>
+<div class="col-md-12">
+	<div class="col-md-3">
+		<h4>Suggestions: Following({{ suggestion_list.follow.length }})</h4>
+		<div class="table-responsive"  style="height: 600px;">
+			<table class="table">
+				<tbody>
+					<tr ng-repeat="i in suggestion_list.follow">
+						<td><h4 >{{i.user}}</h4></td>
+						<td>age : {{i.age}}</td>
+						<td>email : {{i.email}}</td>
+						<td><button class="btn btn-danger btn-xs button" ng-click="userunfollow(i.pk)">UnFollow</button></td>
+					</tr>
+					<tr ng-repeat="i in suggestion_list.unfollow">
+						<td><h4 >{{i.user}}</h4></td>
+						<td>age : {{i.age}}</td>
+						<td>email : {{i.email}}</td>
+						<td><button class="btn btn-primary btn-xs button" ng-click="follow(i.pk)">Follow</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="col-md-6 bg-content">
+		<div class="form-group">
+			<label for="comment">Your Tweet:</label>
+			<textarea class="form-control" rows="5" ng-model="description" id="comment"></textarea>
+		</div>
+		<button class="btn btn-primary button" ng-click="tweet()" style="float:right">
+			Post
+		</button>
+		<br><br>
+		<div class="table-responsive" style="height: 600px;">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>User</th>
+						<th>Tweet</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="i in data">
+						<td>{{i.user}}</td>
+						<td>{{i.tweet}}</td>
+						<td><button ng-show="i.like === 'true'" class="btn btn-warning btn-xs button" ng-click="liking(i.pk)">UnLike({{i.count}})</button>
+						<button ng-show="i.like === 'false'" class="btn btn-primary btn-xs button" ng-click="liking(i.pk)">Like({{i.count}})</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="col-md-3"></div>
+</div>
