@@ -11,7 +11,7 @@
 	<br><br><br><br>
 </div>
 <div class="col-md-12">
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<h4>Suggestions: Following({{ suggestion_list.follow.length }})</h4>
 		<div class="table-responsive"  style="height: 600px;">
 			<table class="table">
@@ -46,16 +46,21 @@
 				<thead>
 					<tr>
 						<th>User</th>
-						<th>Tweet</th>
-						<th>Action</th>
+						<!-- <th>Tweet</th>
+						<th>Action</th> -->
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="i in data">
-						<td>{{i.user}}</td>
-						<td>{{i.tweet}}</td>
-						<td><button ng-show="i.like === 'true'" class="btn btn-warning btn-xs button" ng-click="liking(i.pk)">unfavorite({{i.count}})</button>
-						<button ng-show="i.like === 'false'" class="btn btn-primary btn-xs button" ng-click="liking(i.pk)">favorite({{i.count}})</button></td>
+					<td>
+						<table>
+						<tr>
+						<td><img src="static/static/img/user_logo.png" height="30" width="30">&nbsp;&nbsp;<span style="color:green">{{i.user}}</span></td></tr>
+						<tr><td width="10%"><br>{{i.tweet}}</td></tr>
+						<tr><td><button ng-show="i.like === 'true'" class="btn btn-warning btn-xs button" ng-click="liking(i.pk)">unfavorite({{i.count}})</button>
+						<button ng-show="i.like === 'false'" class="btn btn-primary btn-xs button" ng-click="liking(i.pk)">favorite({{i.count}})</button></td></tr>
+						</table>
+						</td>
 					</tr>
 				</tbody>
 			</table>

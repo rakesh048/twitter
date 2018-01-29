@@ -35,7 +35,6 @@ def loginn(request):
 def registeration(request):
 	if request.method == 'POST':
 		data = json.loads(request.body)
-		print data
 		username = data.get('username')
 		password = data.get('password')
 		email = data.get('email')
@@ -75,11 +74,8 @@ def follow(request,pk):
 @csrf_exempt
 def userunfollow(request,pk):
 	if request.method == 'GET':
-		print 'huu'
-		print request.user
 		user_to_follow = userinfo.objects.get(pk=pk)
 		user_obj = userinfo.objects.get(username=request.user)
-		print user_to_follow,user_obj
 		creation = user_obj.following.remove(user_to_follow)
 		dict_response = json.dumps({"data":"You unFollow the user","success":"true"})
 		return HttpResponse(dict_response)
@@ -131,7 +127,6 @@ def suggestion(request):
 			if i not in following_user_list:
 			    unfollowing_user.append({"user":str(i),"pk":str(i.id),"age":str(i.age),"email":str(i.email)})
 		dict_response = json.dumps({"data":{"follow":following_user,"unfollow":unfollowing_user},"success":"true"})					
-		print dict_response,'ffffffffffffffffffffffffffff'
 		return HttpResponse(dict_response)
 
 

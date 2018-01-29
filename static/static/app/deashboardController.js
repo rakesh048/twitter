@@ -17,11 +17,13 @@ $scope.logout = function()
     if(response.success == 'false')
       alert(response.data)
     else
+    {
       $scope.data = response.data;
-    $window.location = url;
+      $window.location = url;
+    }
   });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 };
 $scope.tweet = function()
@@ -44,14 +46,13 @@ $scope.tweet = function()
       if(response.success == 'false')
         alert(response.data)
       else
-        //alert(response.data)
+      {
       $scope.description = '';
       $scope.showtweet();
-          //$window.location = "http://192.168.1.97:8080";
-
+      }
         });
     send.error(function(response){
-      alert('Server Error')
+      console.log('Server Error')
     });
   }
   else
@@ -73,11 +74,9 @@ $scope.showtweet = function()
       alert(response.data)
     else
       $scope.data = response.data;
-    console.log('reeee',response.data)
-        //$window.location = "http://192.168.1.97:8080";
       });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 };
 $scope.showtweet();
@@ -99,7 +98,7 @@ $scope.suggestion = function()
 
   });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 }
 
@@ -123,7 +122,7 @@ $scope.follow = function(j)
   }
   });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 }
 
@@ -145,7 +144,7 @@ $scope.userunfollow = function(j)
  }
   });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 }
 
@@ -164,7 +163,7 @@ $scope.liking = function(j)
     $scope.showtweet();
   });
   send.error(function(response){
-    alert('Server Error')
+    console.log('Server Error')
   });
 }
 });
